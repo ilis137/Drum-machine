@@ -1,0 +1,30 @@
+.inner {
+    background-color: red;
+    border-radius: 50%;
+    width: 35%;
+    z-index: 5;
+}
+
+.outer {
+    width: 8vw;
+    height: 25px;
+    max-width: 77px;
+    min-width: 48px;
+    background-color: #E2F2B1;
+    color: #1f0052;
+    z-index: 2;
+    margin: 0 auto 10px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.outer-inactive,
+.out-A {
+    justify-content: flex-start;
+}
+
+.outer-active,
+.out-B {
+    justify-content: flex-end;
+}

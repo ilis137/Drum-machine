@@ -1,8 +1,9 @@
 import React from "react";
 import Pad from "./pad/pad";
+import "./PadBank.css";
 const PadBank = props => {
   const arr = props.bank;
-  return arr.map(obj => {
+  const padBank = arr.map(obj => {
     return (
       <Pad
         padId={obj.id}
@@ -14,5 +15,7 @@ const PadBank = props => {
       />
     );
   });
+  return <div className="PadBank">{padBank}</div>;
 };
+
 export default PadBank;

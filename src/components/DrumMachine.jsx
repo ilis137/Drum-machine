@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Controls from "./Controls/Controls";
 import PadBank from "./PadBank/PadBank";
+import "./DrumMachine.css";
 const bankOne = [
   {
     keyCode: 81,
@@ -123,7 +124,7 @@ class DrumMachine extends Component {
   };
   render() {
     return (
-      <div className="">
+      <div className="DrumMachine">
         <PadBank
           power={this.state.power}
           playSound={this.playSound}

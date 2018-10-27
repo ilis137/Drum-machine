@@ -1,0 +1,13 @@
+.pad {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+    font-size: 20px;
+    font-weight: 400;
+}

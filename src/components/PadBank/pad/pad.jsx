@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./pad.css";
 const Pad = props => {
   return (
     <button

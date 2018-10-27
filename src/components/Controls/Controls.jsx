@@ -1,10 +1,13 @@
 import React from "react";
-//import Switch from "Switch";
+import Switch from "./Switch/Switch";
+import "./Controls.css";
 const Controls = props => {
   return (
     <div className="controls">
-      <p>Power</p>
-      {/*<Switch power={props.power} powerChange={props.powerChange} />*/}
+      <div className="power-control">
+        <p>Power</p>
+        <Switch power={props.power} powerChange={props.powerChange} />
+      </div>
       <div className="display">
         <p>
           Volume:
@@ -23,7 +26,7 @@ const Controls = props => {
         className="volume"
       />
       <p>Bank</p>
-      {/*<Switch bank={props.bank} bankChange={props.handleBank} />*/}
+      <Switch bank={props.bank} bankChange={props.handleBank} />
     </div>
   );
 };
