@@ -4,10 +4,13 @@ const Pad = props => {
   return (
     <button
       className="pad"
-      onClick={props.playSound}
-      onKeyDown={props.playSound}
+      onClick={e => {
+        props.playSound(e);
+        console.log("playing sound");
+      }}
       value={props.sound}
       id={props.padId}
+      disabled={!props.power}
     >
       {props.keyTrigger}
     </button>

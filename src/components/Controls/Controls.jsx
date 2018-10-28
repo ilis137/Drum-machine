@@ -6,7 +6,7 @@ const Controls = props => {
     <div className="controls">
       <div className="power-control">
         <p>Power</p>
-        <Switch power={props.power} powerChange={props.powerChange} />
+        <Switch onOff={props.power} switch={props.powerChange} />
       </div>
       <div className="display">
         <p>
@@ -21,12 +21,12 @@ const Controls = props => {
         min="0"
         max="1"
         step="0.01"
-        onChange={props.adjustVolume}
-        value={props.volume}
+        onChange={e => props.adjustVolume(e)}
+        value={props.volume / 100}
         className="volume"
       />
       <p>Bank</p>
-      <Switch bank={props.bank} bankChange={props.handleBank} />
+      <Switch onOff={props.bank} switch={props.bankChange} />
     </div>
   );
 };

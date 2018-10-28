@@ -122,20 +122,52 @@ class DrumMachine extends Component {
     volume: 50,
     bank: bankOne
   };
+  handlePowerChange = () => {
+    const newPowerState = this.state.power === "on" ? "off" : "on";
+    this.setState({ power: newPowerState });
+  };
+  handleBank = () => {
+    const updatedBank = this.state.bank === bankOne ? bankTwo : bankOne;
+    this.setState({ bank: updatedBank });
+    console.log(this.state.bank === bankTwo);
+  };
+  handleVolume = e => {
+    const value = e.target.value;
+    const newVolume = parseInt(value * 100);
+    this.setState({ volume: newVolume });
+  };
+  playSound = e => {
+    const sound = e.target.value;
+    const audio = new Audio(sound);
+    console.log(sound);
+    audio.volume = this.state.volume / 100;
+    audio.play();
+  };
+  handleKey = e => {
+    const keyPressed = e.key.toUpperCase();
+    this.state.bank.forEach(el => {
+      if (el.keyTrigger === keyPressed) {
+        const audio = new Audio(el.url);
+        console.log(el.url);
+        audio.volume = this.state.volume / 100;
+        audio.play();
+      }
+    });
+  };
   render() {
     return (
-      <div className="DrumMachine">
+      <div className="DrumMachine" onKeyDown={this.handleKey}>
         <PadBank
-          power={this.state.power}
+          power={this.state.power === "on"}
           playSound={this.playSound}
           bank={this.state.bank}
         />
         <Controls
-          power={this.state.power}
-          powerChange={this.handlePoweChange}
+          power={this.state.power === "on"}
+          powerChange={this.handlePowerChange}
           volume={this.state.volume}
           adjustVolume={this.handleVolume}
-          bank={this.state.bank}
+          bank={this.state.bank === bankTwo}
           bankChange={this.handleBank}
         />
       </div>

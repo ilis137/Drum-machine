@@ -11,7 +11,10 @@ const PadBank = props => {
         keyTrigger={obj.keyTrigger}
         sound={obj.url}
         power={props.power}
-        playSound={props.playSound}
+        playSound={e => {
+          props.playSound(e);
+          console.log("playing sound");
+        }}
       />
     );
   });

@@ -6,7 +6,7 @@
     background-color: #bdbdbd;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 660px) {
     .DrumMachine {
         transform: scale(0.7);
     }
