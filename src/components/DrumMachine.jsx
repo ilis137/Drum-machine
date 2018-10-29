@@ -118,9 +118,10 @@ const bankTwo = [
 
 class DrumMachine extends Component {
   state = {
-    power: "off",
+    power: "on",
     volume: 50,
-    bank: bankOne
+    bank: bankOne,
+    display: ""
   };
   handlePowerChange = () => {
     const newPowerState = this.state.power === "on" ? "off" : "on";
@@ -135,6 +136,7 @@ class DrumMachine extends Component {
     const value = e.target.value;
     const newVolume = parseInt(value * 100);
     this.setState({ volume: newVolume });
+    this.display("Volume:" + newVolume);
   };
   playSound = e => {
     const sound = e.target.value;
@@ -142,6 +144,7 @@ class DrumMachine extends Component {
     console.log(sound);
     audio.volume = this.state.volume / 100;
     audio.play();
+    this.display(e.target.id);
   };
   handleKey = e => {
     const keyPressed = e.key.toUpperCase();
@@ -153,7 +156,15 @@ class DrumMachine extends Component {
         audio.play();
       }
     });
+    this.display(e.target.id);
   };
+  display(el) {
+    clearTimeout(this.displayTime);
+    this.setState({ display: el });
+    this.displayTime = setTimeout(() => {
+      this.setState({ display: "" });
+    }, 1000);
+  }
   render() {
     return (
       <div className="DrumMachine" onKeyDown={this.handleKey}>
@@ -169,6 +180,7 @@ class DrumMachine extends Component {
           adjustVolume={this.handleVolume}
           bank={this.state.bank === bankTwo}
           bankChange={this.handleBank}
+          display={this.state.display}
         />
       </div>
     );

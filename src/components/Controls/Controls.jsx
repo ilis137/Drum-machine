@@ -9,22 +9,23 @@ const Controls = props => {
         <Switch onOff={props.power} switch={props.powerChange} />
       </div>
       <div className="display">
-        <p>
-          Volume:
-          {props.volume}
-        </p>
+        <p>{props.display}</p>
       </div>
-      <input
-        type="range"
-        id="volume"
-        name="vol"
-        min="0"
-        max="1"
-        step="0.01"
-        onChange={e => props.adjustVolume(e)}
-        value={props.volume / 100}
-        className="volume"
-      />
+      <div id="vol-container">
+        <p>Volume</p>
+        <input
+          type="range"
+          id="volume"
+          name="vol"
+          min="0"
+          max="1"
+          step="0.01"
+          onChange={e => props.adjustVolume(e)}
+          value={props.volume / 100}
+          className="volume"
+        />
+      </div>
+
       <p>Bank</p>
       <Switch onOff={props.bank} switch={props.bankChange} />
     </div>

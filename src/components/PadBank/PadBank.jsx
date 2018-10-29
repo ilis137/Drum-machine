@@ -6,6 +6,7 @@ const PadBank = props => {
   const padBank = arr.map(obj => {
     return (
       <Pad
+        key={obj.keyCode}
         padId={obj.id}
         keyCode={obj.keyCode}
         keyTrigger={obj.keyTrigger}

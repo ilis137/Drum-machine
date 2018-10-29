@@ -11,6 +11,7 @@ p {
     font-weight: 400;
     text-align: center;
     margin: auto;
+    color: darkred;
 }
 
 .display {
@@ -25,10 +26,14 @@ p {
 }
 
 #volume {
-    padding: 40px 0;
+    padding: 10px 0;
     box-sizing: border-box;
 }
 
 .power-control {
     padding-bottom: 20px;
+}
+
+#vol-container {
+    padding: 20px 0;
 }

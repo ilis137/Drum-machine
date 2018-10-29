@@ -1,9 +1,10 @@
 .DrumMachine {
-    outline: 5px solid #29b6f6;
+    outline: 5px solid #636363;
     position: relative;
     width: 660px;
     text-align: center;
-    background-color: #bdbdbd;
+    background: linear-gradient(to right, #2e2e2e, #4d4e4e);
+    ;
 }
 
 @media screen and (max-width: 660px) {

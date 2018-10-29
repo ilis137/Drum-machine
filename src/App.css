@@ -4,7 +4,6 @@ html {
 
 body {
     height: 100vh;
-    background: grey;
 }
 
 .App {
@@ -13,4 +12,5 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
 }
